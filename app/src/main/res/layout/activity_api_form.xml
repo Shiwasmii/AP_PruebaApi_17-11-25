@@ -12,8 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
-        android:clipToPadding="false"
-        android:paddingTop="45dp"
+        android:paddingTop="20dp"
         android:paddingBottom="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,99 +27,35 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp">
 
-            <!-- GridLayout para Inputs en 2 columnas -->
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:rowCount="5"
-                android:columnOrderPreserved="false"
                 android:layout_marginBottom="16dp">
 
-                <!-- Columna 1 -->
                 <EditText
-                    android:id="@+id/txt_id_empresa"
+                    android:id="@+id/txt_id_producto"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:hint="ID Empresa"
-                    android:inputType="text"
-                    android:padding="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp" />
-
-                <EditText
-                    android:id="@+id/txt_descripcion"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:hint="Descripción"
-                    android:inputType="textMultiLine"
-                    android:padding="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp" />
-
-                <EditText
-                    android:id="@+id/txt_stock"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_row="2"
-                    android:layout_column="0"
-                    android:hint="Cantidad Stock"
+                    android:hint="ID Producto"
                     android:inputType="number"
                     android:padding="12dp"
                     android:background="@android:drawable/edit_text"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp" />
 
-                <EditText
-                    android:id="@+id/txt_fecha_vencimiento"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_row="3"
-                    android:layout_column="0"
-                    android:hint="Fecha de Vencimiento"
-                    android:inputType="date"
-                    android:padding="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp" />
 
-                <EditText
-                    android:id="@+id/txt_categoria"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_row="4"
-                    android:layout_column="0"
-                    android:hint="Categoría"
-                    android:inputType="text"
-                    android:padding="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp" />
-
-                <!-- Columna 2 -->
                 <EditText
                     android:id="@+id/txt_producto"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:hint="Producto"
+                    android:hint="Producto (Nombre)"
                     android:inputType="text"
                     android:padding="12dp"
                     android:background="@android:drawable/edit_text"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp" />
 
                 <EditText
@@ -128,8 +63,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:layout_row="1"
-                    android:layout_column="1"
                     android:hint="Precio"
                     android:inputType="numberDecimal"
                     android:padding="12dp"
@@ -142,37 +75,19 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:layout_row="2"
-                    android:layout_column="1"
-                    android:hint="Unidad de Medida"
+                    android:hint="Unidad Medida"
                     android:inputType="text"
                     android:padding="12dp"
                     android:background="@android:drawable/edit_text"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp" />
 
                 <EditText
-                    android:id="@+id/txt_estado"
+                    android:id="@+id/txt_categoria"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
-                    android:layout_row="3"
-                    android:layout_column="1"
-                    android:hint="Estado"
-                    android:inputType="text"
-                    android:padding="12dp"
-                    android:background="@android:drawable/edit_text"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginBottom="8dp" />
-
-                <EditText
-                    android:id="@+id/txt_id_categoria"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_row="4"
-                    android:layout_column="1"
-                    android:hint="ID Categoría"
+                    android:hint="Categoría"
                     android:inputType="text"
                     android:padding="12dp"
                     android:background="@android:drawable/edit_text"
@@ -181,19 +96,28 @@
 
             </GridLayout>
 
-            <!-- Botón Agregar -->
+            <EditText
+                android:id="@+id/txt_descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción del producto"
+                android:inputType="textMultiLine"
+                android:minLines="2"
+                android:padding="12dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="16dp" />
+
             <Button
                 android:id="@+id/btnAgregar"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:text="Agregar"
+                android:text="Agregar Producto"
                 android:textAllCaps="false"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
                 android:background="@drawable/btn_solido"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="8dp" />
 
-            <!-- ListView -->
             <ListView
                 android:id="@+id/listViewData"
                 android:layout_width="match_parent"

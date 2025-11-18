@@ -23,16 +23,26 @@ public class ProductoAdapter extends ArrayAdapter<Producto> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_producto, parent, false);
         }
 
-        ((TextView) convertView.findViewById(R.id.txtIdEmpresa)).setText("ID Empresa: " + producto.getIdEmpresa());
-        ((TextView) convertView.findViewById(R.id.txtProducto)).setText("Producto: " + producto.getProducto());
-        ((TextView) convertView.findViewById(R.id.txtDescripcion)).setText("Descripción: " + producto.getDescripcion());
-        ((TextView) convertView.findViewById(R.id.txtPrecio)).setText("Precio: " + producto.getPrecio());
-        ((TextView) convertView.findViewById(R.id.txtStock)).setText("Cantidad Stock: " + producto.getStock());
-        ((TextView) convertView.findViewById(R.id.txtUnidadMedida)).setText("Unidad de Medida: " + producto.getUnidadMedida());
-        ((TextView) convertView.findViewById(R.id.txtFechaVencimiento)).setText("Fecha de Vencimiento: " + producto.getFechaVencimiento());
-        ((TextView) convertView.findViewById(R.id.txtEstado)).setText("Estado: " + producto.getEstado());
-        ((TextView) convertView.findViewById(R.id.txtCategoria)).setText("Categoría: " + producto.getCategoria());
-        ((TextView) convertView.findViewById(R.id.txtIdCategoria)).setText("ID Categoría: " + producto.getIdCategoria());
+        if (producto != null) {
+
+            TextView txtIdProducto = convertView.findViewById(R.id.txtIdProducto);
+            TextView txtIdEmpresa = convertView.findViewById(R.id.txtIdEmpresa);
+            TextView txtProducto = convertView.findViewById(R.id.txtProducto);
+            TextView txtDescripcion = convertView.findViewById(R.id.txtDescripcion);
+            TextView txtPrecio = convertView.findViewById(R.id.txtPrecio);
+            TextView txtUnidadMedida = convertView.findViewById(R.id.txtUnidadMedida);
+            TextView txtCategoria = convertView.findViewById(R.id.txtCategoria);
+
+            txtIdProducto.setText("ID: " + producto.getIdProducto());
+            txtIdEmpresa.setText("Empresa ID: " + producto.getIdEmpresa());
+
+            txtProducto.setText(producto.getProducto1());
+
+            txtDescripcion.setText(producto.getDescripcion());
+            txtPrecio.setText("Precio: " + producto.getPrecio());
+            txtUnidadMedida.setText("Unidad: " + producto.getUnidadMedida());
+            txtCategoria.setText("Categoría: " + producto.getCategoria());
+        }
 
         return convertView;
     }
